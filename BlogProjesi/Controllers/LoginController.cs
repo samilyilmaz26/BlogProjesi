@@ -45,7 +45,6 @@ namespace BlogProjesi.Controllers
             else
             {
                 //  ViewBag.Msg = "şifre Yanlış"; 
-                // b2 branch
                 return View();
             }
 
