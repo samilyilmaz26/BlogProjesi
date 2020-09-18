@@ -1,0 +1,14 @@
+﻿1) Login yapacapımız yerde constructorda aşağıdaki kodlar yazılr:
+ 
+ ISession _session;
+        public LoginController(BlogContext db, UserModel userModel , IHttpContextAccessor httpContextAccessor)
+        {
+            _userModel = userModel;
+            _db = db;
+            _session = httpContextAccessor.HttpContext.Session;
+        }
+2)Startup   Servis kısmına aşağıdaki kodlar eklenir
+services.AddSession(x => x.IdleTimeout = TimeSpan.FromMinutes(60));
+services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+3) Startup Configure metoda
+ app.UseSession(); eklenir

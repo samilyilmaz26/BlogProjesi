@@ -1,0 +1,22 @@
+﻿@model BlogProjesi.Context.BlogContext.Makaleler
+@{
+    ViewData["Title"] = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Makale Detayları</h1>
+<form asp-action="Detay">
+    
+    <div class="form-group">
+        <label asp-for="Baslik" class="control-label"></label>
+        <p >@Model.Baslik</p>
+    </div>
+    <div class="form-group">
+        <label asp-for="Detay" class="control-label"></label>
+        <textarea name="Detay" disabled class="form-control" asp-for="Detay">@Model.Detay</textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Listeye Dön" class="btn btn-warning" formaction="/Blogs/List" />
+    </div>
+</form>
+

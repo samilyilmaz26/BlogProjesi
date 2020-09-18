@@ -1,0 +1,18 @@
+﻿@model ICollection<BlogProjesi.Context.BlogContext.Makaleler>
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Makaleler</h1>
+ 
+<ul class="list-group">
+    
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item"><a href="/Blogs/Detay/@item.Id">@item.Baslik</a></li>
+    }
+
+    
+</ul>
+

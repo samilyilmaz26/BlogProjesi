@@ -1,0 +1,28 @@
+﻿@model  BlogProjesi.Models.Views.MakaleModel
+@{
+    ViewData["Title"] = "Guncel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="@Model.Action">
+    <div class="form-group">
+        <input asp-for="Makele.Id" type="hidden" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Makele.Baslik" class="control-label"></label>
+        <input asp-for="Makele.Baslik" class="form-control" />
+        <span asp-validation-for="Makele.Baslik" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Makele.Detay" class="control-label"></label>
+        <textarea name="Detay" class="form-control"  asp-for="Makele.Detay">@Model.Detay</textarea>
+        <span asp-validation-for="Makele.Detay" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="İptal" class="btn btn-warning" formaction="/Blogs/MyList" />
+    </div>
+</form>
+
